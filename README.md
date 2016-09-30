@@ -8,6 +8,7 @@ USER STORIES:
 Visitor wants to filter search by date, address, category of permit, action ktype, and app status so that particular kinds of development may be studied.
 Visitor wants map of developments so that development location may be visualized.
 Visitor wants links to permit status and complaint so that additional information may be easily viewed.
+Visitor wants limits on data displayed so that performance issues are avoided.
 
 Developer wants code to be modular for expansion and scope to be achieved easily.
 Developer wants to be dry  with good commenting so that the code is easy to understand and changes can be implemented easily.
