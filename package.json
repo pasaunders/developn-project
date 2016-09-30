@@ -1,0 +1,19 @@
+{
+  "name": "developn-project",
+  "version": "1.0.0",
+  "description": "Displays a map of building permits being processed by the city of Seattle.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pasaunders/developn-project.git"
+  },
+  "author": "kaorti@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pasaunders/developn-project/issues"
+  },
+  "homepage": "https://github.com/pasaunders/developn-project#readme"
+}
