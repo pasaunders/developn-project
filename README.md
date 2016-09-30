@@ -6,7 +6,7 @@ api to display development projects.
 
 USER STORIES:
 Visitor wants to filter search by date, address, category of permit, action ktype, and app status so that particular kinds of development may be studied.
-Visitor wants map of developments so that development location may be visualized..
+Visitor wants map of developments so that development location may be visualized.
 Visitor wants links to permit status and complaint so that additional information may be easily viewed.
 
 Developer wants code to be modular for expansion and scope to be achieved easily.
