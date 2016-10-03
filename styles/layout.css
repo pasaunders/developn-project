@@ -1,0 +1,8 @@
+/* Mobile phones ----------- */
+@media only screen and (min-device-width : 375px)
+
+/* Tablets ----------- */
+@media only screen and (min-device-width : 768px)
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px)
