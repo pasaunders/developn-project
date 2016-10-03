@@ -5,6 +5,9 @@
   // permits object to contain permits array,
   // get request to populate array,
   //
+
+
+
   function permits (opts) {
     Object.keys(opts).forEach(function(e, index, keys) {
       this[e] = opts[e];
@@ -21,6 +24,9 @@
   // get requst to populate permits.all with
   // permits data. endpoint https://data.seattle.gov/resource/i5jq-ms7b.
 
+  // permits.createTable
+  // permits = {};
+
   permits.createTable = function(callback) {
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS permits (' +
@@ -33,7 +39,7 @@
         'Action_Type VARCHAR(255), ' +
         'Work_Type VARCHAR(255), ' +
         'Value VARCHAR(255), ' +
-        'Applicant_Name VARCHAR(255) ' +
+        'Applicant_Name VARCHAR(255), ' +
         'Application_Date DATETIME, ' +
         'Issue_Date DATETIME, ' +
         'Final_Date DATETIME, ' +
@@ -49,12 +55,14 @@
     );
   };
 
+  permits.createTable();
+
   permits.prototype.insertRecord = function(callback) {
     webDB.execute(
       [{
         'sql': 'INSERT INTO permits ' +
         '(Application_Permit_Number, Permit_Type, Address, Description, Category, Action_Type, Work_Type, Value, Applicant_Name, Application_Date, Issue_Date, Final_Date, Expiration_Date, Status, Contractor, Permit_and_Complaint_Status_URL, Master_Use_Permit, Latitude, Longitude, Location) ' +
-        'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, )',
+        'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )',
         'data':
           [this.application_permit_number,
           this.permit_type,
@@ -105,6 +113,9 @@
   // temporary invocation.
 
   // permits.requestPermits();
+
+
+
   permits.fetchAll();
 
 //   module.permits;
