@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>devlopR</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">``
+    <title>devlopD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/styles/base.css">
     <link rel="stylesheet" href="/styles/layout.css">
     <link rel="stylesheet" href="/styles/modules.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto" rel="stylesheet">
     <section>
       <!-- handlebars templates here -->
     </section>
@@ -30,6 +31,7 @@
       <section id="resultsPage">
         <!-- results "page" goes here -->
         <article id="mapWindow" class="">
+          <div id="mapBox"></div>
           <!-- google maps window -->
         </article>
         <article id="infoBox" class="">
@@ -48,9 +50,9 @@
   <!-- scripts go here -->
   <!-- Libraries -->
   <script src="vendor/page.js"></script>
-  <!-- slim jquery not working???? -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>
   <script src="vendor/handlebars-v4.0.5.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQGQs5-aAUxm7SPyVekerE3WxjRKcjBhs&libraries=geometry&callback=initMap" async defer></script>
   <!-- Models -->
   <script type="text/javascript" src="scripts/models/mapModel.js"></script>
   <script type="text/javascript" src="scripts/models/permitModel.js"></script>
