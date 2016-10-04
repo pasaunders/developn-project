@@ -104,8 +104,6 @@
 
   permits.all = [];
 
-  sqlString = '?$select=address,permit_type,application_date&$where=permit_type%20=%20%27Construction%27%20AND%20application_date%20>%20%272011-01-01T00:00:00%27&$order=application_date DESC';
-
   permits.getUserRequestedData = function(sql) {
     $.get('https://data.seattle.gov/' +
           'resource/i5jq-ms7b.json' +
@@ -114,8 +112,6 @@
       permits.all = data;
     });
   };
-
-  permits.getUserRequestedData(sqlString);
 
   //
   // // permits.requestPermits = function() {
