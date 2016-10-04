@@ -25,18 +25,40 @@
         </nav>
     </header>
     <main>
+
       <section id="filtersPage">
         <!-- Apply filters on this "page" -->
-        <form action="">
-          <input type="radio" name="permitType" value="construction"> Contstruction<br>
-          <input type="radio" name="permitType" value="demolition"> Demolition<br>
-          <input type="radio" name="permitType" value="siteDev"> Site Development
-        </form>
+
         <article class="">
           <!-- address entered -->
+          <div id="locationField">
+            <input id="autocomplete" placeholder="Enter your address"
+            onFocus="geolocate()" type="text"></input>
+          </div>
         </article>
+
         <article class="">
           <!-- filter choices (use checkboxes?) -->
+          <form action="" id="permitTypeForm">
+            <input type="radio" name="permitType" value="construction"> Construction<br>
+            <input type="radio" name="permitType" value="demolition"> Demolition<br>
+            <input type="radio" name="permitType" value="siteDev"> Site Development<br>
+          </form>
+
+          <form class="" id="categoryTypeForm">
+            <input type="radio" name="categoryType" value="commercial"> Commercial<br>
+            <input type="radio" name="categoryType" value="industrial"> Industrial<br>
+            <input type="radio" name="categoryType" value="institutional"> Institutional<br>
+            <input type="radio" name="categoryType" value="multifamily"> Multifamily<br>
+            <input type="radio" name="categoryType" value="singleFamilyDuplex"> Single Family/Duplex<br>
+          </form>
+
+          <form action="" id="permitStatusForm">
+            <input type="radio" name="permitStatus" value="applicationAccepted"> Application Accepted<br>
+            <input type="radio" name="permitStatus" value="permitIssued"> Permit Issued<br>
+            <input type="radio" name="permitStatus" value="reviewsCompleted"> Reviews Completed<br>
+            <input type="radio" name="permitStatus" value="applicationClosed"> Application Closed<br>
+          </form>
         </article>
       </section>
       <section id="resultsPage">

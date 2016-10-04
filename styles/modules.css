@@ -25,6 +25,21 @@ footer {
   height: 50px;
 }
 
+#filtersPage {
+  background-color: #fff;
+  color: black;
+  margin: 10%;
+  padding: 5% 0;
+}
+
+#permitTypeForm {
+  background-color: #B3E5FC;
+}
+
+#permitStatusForm {
+  background-color: #B3E5FC;
+}
+
 #mapBox {
   margin: 10%;
   padding: 25% 0;
