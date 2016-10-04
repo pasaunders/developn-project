@@ -1,20 +1,3 @@
-function populateMap() {
-  permits.all.forEach(function(row, idx, array) {
-    var marker = new google.maps.marker({
-      position: this.location,
-      map: map,
-      title: ''
-    });
-  });
-}
-
-
-
-
-
-
-
-
 
 // (function(module){
 //   var locations = {};
