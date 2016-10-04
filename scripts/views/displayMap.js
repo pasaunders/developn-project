@@ -26,7 +26,7 @@
   ];
 
   var mapOptions = {
-    zoom: 15,
+    zoom: 12,
     styles: stylesArray,
     center: new google.maps.LatLng(47.618217, -122.351832),
     mapTypeId: google.maps.MapTypeId.STREET,
@@ -44,12 +44,42 @@
   google.maps.event.addDomListener(window, 'resize', function() {
     var center = map.getCenter();
     google.maps.event.trigger(map, 'resize');
-    map.setCenter(center);
+    map.setCenter(center);var address = '4455 Interlake AVE N Seattle WA 98103'; //value needs to be set based on the address form field.
+geocoder.geocode({'address': address},{
+  componentRestrictions: {locality: 'Seattle'}
+}, function(results, status){
+  if (status === 'OK') {
+    map.setCenter(results[0].geometry.location);
+  } else {
+    alert('Geocode was not successful for the following reason: ' + status);
+  }
+});
   });
 
-  var marker = new google.maps.Marker({
-    position: {lat: 47.618217, lng: -122.351832},
-    map: map
-  });
+  function populateMap() {
+    permits.all.forEach(function(row, idx, array) {
+      // var myLatLng = new google.maps.LatLng(Number(this.latitude,Number(this.longitude)));
+      var marker = new google.maps.Marker({
+        position: {lat: Number(row.latitude), lng: Number(row.longitude)},
+        map: map,
+      });
+    });
+  }
+  populateMap();  //there is probably a better way to populate the markers
+
+  function setCenter() {
+    var geocoder = new google.maps.Geocoder();
+    var address = 'value'; //value needs to be set based on the address form field.
+    geocoder.geocode({'address': address},
+    // {componentRestrictions: {country: 'US'}}, non-functional, we want to restrict to the seattle locality
+    function(results, status){
+      if (status === 'OK') {
+        map.setCenter(results[0].geometry.location);
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  };
+
   module.map = map;
 })(window);
