@@ -1,7 +1,11 @@
 body {
   color: #fff;
-  background-color: #03A9F4;
+  background-color: #EBEFF1;
   font-family: 'Roboto', sans-serif;
   font-family: 'Noto Sans', sans-serif;
 
+}
+
+nav li {
+  height: 15px;
 }
