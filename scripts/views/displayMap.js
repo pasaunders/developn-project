@@ -60,26 +60,28 @@
     });
   });
 
+  var infoWindow = new google.maps.InfoWindow();
   mapBuilder.populateMap = function() {
     permits.all.forEach(function(row, idx, array) {
-      // var myLatLng = new google.maps.LatLng(Number(this.latitude,Number(this.longitude)));
+      var context = {address: row.address, application_permit_number: row.application_permit_number,
+        description: row.description, category: row.category, action_type: row.action_type,
+        permit_type: row.permit_type, applicant_name: row.applicant_name, value: row.value,
+        application_date: row.application_date, issue_date: row.issue_date,
+        expiration_date: row.expiration_date, permit_and_complaint_status_url: row.permit_and_complaint_status_url,
+        complaint: row.permit_and_complaint_status_url};
+      var html = template(context);
       var marker = new google.maps.Marker({
         position: {lat: Number(row.latitude), lng: Number(row.longitude)},
         map: map,
       });
       marker.addListener('click', function() {
-        //code to populate info box here.
-        var context = {address: row.Address, application_permit_number: row.application_permit_number,
-          description: row.description, category: row.category, action_type: row.action_type,
-          permit_type: row.permit_type, applicant_name: row.applicant_name, value: row.value,
-          application_date: row.application_date, issue_date: row.issue_date,
-          expiration_date: row.expiration_date, permit_and_complaint_status_url: row.permit_and_complaint_status_url,
-          complaint: row.permit_and_complaint_status_url};
-        var html = template(context);
+        infoWindow.setContent(html);
+        infoWindow.open(marker.get(map), marker);
       });
     });
     mapBuilder.setCenter();
   };
+
 
   mapBuilder.setCenter = function() {
     var geocoder = new google.maps.Geocoder();
