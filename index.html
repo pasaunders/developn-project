@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/layout.css">
     <link rel="stylesheet" href="/styles/modules.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <section>
       <!-- handlebars templates here -->
       <script id="property-template" type="text/x-handlebars-template">
@@ -27,7 +28,6 @@
     </section>
   </head>
   <body>
-
     <header>
         <!-- navbar here -->
         <nav>
@@ -60,18 +60,18 @@
           </form>
 
           <form class="" id="categoryTypeForm">
-            <input type="radio" name="categoryType" value="commercial"> Commercial<br>
-            <input type="radio" name="categoryType" value="industrial"> Industrial<br>
-            <input type="radio" name="categoryType" value="institutional"> Institutional<br>
-            <input type="radio" name="categoryType" value="multifamily"> Multifamily<br>
-            <input type="radio" name="categoryType" value="singleFamilyDuplex"> Single Family/Duplex<br>
+            <input type="radio" name="categoryType" value="category%20=%20%27COMMERCIAL%27"> Commercial<br>
+            <input type="radio" name="categoryType" value="category%20=%20%27INDUSTRIAL%27"> Industrial<br>
+            <input type="radio" name="categoryType" value="category%20=%20%27INSTITUTIONAL%27"> Institutional<br>
+            <input type="radio" name="categoryType" value="category%20=%20%27MULTIFAMILY%27"> Multifamily<br>
+            <input type="radio" name="categoryType" value="category%20=%20%27SINGLE%20FAMILY%20%%2f20DUPLEX%27"> Single Family/Duplex<br>
           </form>
 
           <form action="" id="permitStatusForm">
-            <input type="radio" name="permitStatus" value="applicationAccepted"> Application Accepted<br>
-            <input type="radio" name="permitStatus" value="permitIssued"> Permit Issued<br>
-            <input type="radio" name="permitStatus" value="reviewsCompleted"> Reviews Completed<br>
-            <input type="radio" name="permitStatus" value="applicationClosed"> Application Closed<br>
+            <input type="radio" name="permitStatus" value="status%20=%20%27Application%20Accepted%27"> Application Accepted<br>
+            <input type="radio" name="permitStatus" value="status%20=%20%27Permit%20Issued%27"> Permit Issued<br>
+            <input type="radio" name="permitStatus" value="status%20=%20%27Reviews%20Completed%27"> Reviews Completed<br>
+            <input type="radio" name="permitStatus" value="status%20=%20%27AP%20Closed%27"> Application Closed<br>
           </form>
           <<input type=button value='submit' id="submitButton">
         </article>
@@ -108,6 +108,7 @@
   <script type="text/javascript" src="scripts/models/permitModel.js"></script>
   <!-- Views -->
   <script type="text/javascript" src="scripts/views/displayFilters.js"></script>
+  <script type="text/javascript" src="scripts/controllers/requestController.js"></script>
   <script type="text/javascript" src="scripts/views/displayMap.js"></script>
   <!-- Controllers -->
   <script type="text/javascript" src="scripts/controllers/filterController.js"></script>
