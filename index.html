@@ -11,6 +11,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto">
     <section>
       <!-- handlebars templates here -->
+      <script id="property-template" type="text/x-handlebars-template">
+          <header>
+            <h1>{{address}}</h1>
+            <article class="clearfix" data-permit="{{application_permit_number}}">
+            <div class="byline">
+            <section class="description-body">{{descrition}}</section>
+            {{category}} {{action_type}} {{permit_type}} {{applicant_name}}
+            {{value}} {{application_date}} {{issue_date}} {{expiration_date}}
+            Permit and Complaints <address><a href="{{permit_and_complaint_status_url}}">{{complaint}}</a></address>
+            </div>
+          </header>
+        </article>
+      </script>
     </section>
   </head>
   <body>
