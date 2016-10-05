@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/styles/layout.css">
     <link rel="stylesheet" href="/styles/modules.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto">
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
     <section>
       <!-- handlebars templates here -->
       <script id="property-template" type="text/x-handlebars-template">
@@ -17,7 +17,7 @@
             <h1>{{address}}</h1>
             <article class="clearfix" data-permit="{{application_permit_number}}">
             <div class="byline">
-            <section class="description-body">{{descrition}}</section>
+            <section class="description-body">{{description}}</section>
             {{category}} {{action_type}} {{permit_type}} {{applicant_name}}
             {{value}} {{application_date}} {{issue_date}} {{expiration_date}}
             Permit and Complaints <address><a href="{{permit_and_complaint_status_url}}">{{complaint}}</a></address>
@@ -30,6 +30,7 @@
   <body>
     <header>
         <!-- navbar here -->
+        <img src="/assets/logo.png" id="logo">
         <nav>
           <ul>
             <li><a href="#">Home</a></li>
