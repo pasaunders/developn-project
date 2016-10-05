@@ -1,5 +1,9 @@
 (function(module) {
   mapBuilder = {};
+
+  var source = $("#property-template").html();
+  var template = Handlebars.compile(source);
+
   var stylesArray = [
     {
       featureType: "all",
@@ -45,15 +49,15 @@
     var center = map.getCenter();
     google.maps.event.trigger(map, 'resize');
     map.setCenter(center);var address = '4455 Interlake AVE N Seattle WA 98103'; //value needs to be set based on the address form field.
-geocoder.geocode({'address': address},{
-  componentRestrictions: {locality: 'Seattle'}
-}, function(results, status){
-  if (status === 'OK') {
-    map.setCenter(results[0].geometry.location);
-  } else {
-    alert('Geocode was not successful for the following reason: ' + status);
-  }
-});
+    geocoder.geocode({'address': address},{
+      componentRestrictions: {locality: 'Seattle'}
+    }, function(results, status){
+      if (status === 'OK') {
+        map.setCenter(results[0].geometry.location);
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
   });
 
   mapBuilder.populateMap = function() {
@@ -65,6 +69,13 @@ geocoder.geocode({'address': address},{
       });
       marker.addListener('click', function() {
         //code to populate info box here.
+        var context = {address: row.Address, application_permit_number: row.application_permit_number,
+          description: row.description, category: row.category, action_type: row.action_type, 
+          permit_type: row.permit_type, applicant_name: row.applicant_name, value: row.value,
+          application_date: row.application_date, issue_date: row.issue_date,
+          expiration_date: row.expiration_date, permit_and_complaint_status_url: row.permit_and_complaint_status_url,
+          complaint: row.permit_and_complaint_status_url};
+        var html = template(context);
       });
     });
     mapBuilder.setCenter();
