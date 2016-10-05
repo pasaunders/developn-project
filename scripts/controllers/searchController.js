@@ -1,6 +1,7 @@
 $('#submitButton').on('click', function() {
-  requestController.controlRequest();
-  mapBuilder.populateMap();
+  requestController.controlRequest(function() {
+    mapBuilder.populateMap();
+  });
 });
 
   // var placeSearch, autocomplete;

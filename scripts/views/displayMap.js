@@ -70,7 +70,7 @@
       marker.addListener('click', function() {
         //code to populate info box here.
         var context = {address: row.Address, application_permit_number: row.application_permit_number,
-          description: row.description, category: row.category, action_type: row.action_type, 
+          description: row.description, category: row.category, action_type: row.action_type,
           permit_type: row.permit_type, applicant_name: row.applicant_name, value: row.value,
           application_date: row.application_date, issue_date: row.issue_date,
           expiration_date: row.expiration_date, permit_and_complaint_status_url: row.permit_and_complaint_status_url,
