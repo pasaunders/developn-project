@@ -30,7 +30,7 @@
   ];
 
   var mapOptions = {
-    zoom: 15,
+    zoom: 18,
     styles: stylesArray,
     center: new google.maps.LatLng(47.618217, -122.351832),
     mapTypeId: google.maps.MapTypeId.STREET,
@@ -50,9 +50,10 @@
     google.maps.event.trigger(map, 'resize');
     map.setCenter(center);
   });
-  
+
   var infoWindow = new google.maps.InfoWindow();
-  mapBuilder.populateMap = function() {
+
+  mapBuilder.populateMap = function(ctx, next) {
     permits.all.forEach(function(row, idx, array) {
       var context = {address: row.address, application_permit_number: row.application_permit_number,
         description: row.description, category: row.category, action_type: row.action_type,
@@ -70,6 +71,7 @@
         infoWindow.open(marker.get(map), marker);
       });
     });
+    next();
   };
 
   module.mapBuilder = mapBuilder;
