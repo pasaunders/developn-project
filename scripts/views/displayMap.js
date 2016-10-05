@@ -48,18 +48,9 @@
   google.maps.event.addDomListener(window, 'resize', function() {
     var center = map.getCenter();
     google.maps.event.trigger(map, 'resize');
-    map.setCenter(center);var address = '4455 Interlake AVE N Seattle WA 98103'; //value needs to be set based on the address form field.
-    geocoder.geocode({'address': address},{
-      componentRestrictions: {locality: 'Seattle'}
-    }, function(results, status){
-      if (status === 'OK') {
-        map.setCenter(results[0].geometry.location);
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-    });
+    map.setCenter(center);
   });
-
+  
   var infoWindow = new google.maps.InfoWindow();
   mapBuilder.populateMap = function() {
     permits.all.forEach(function(row, idx, array) {
