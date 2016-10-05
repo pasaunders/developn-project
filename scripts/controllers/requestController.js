@@ -1,7 +1,7 @@
 requestController = {};
 
 var sqlString = '';
-var sqlSelect = '?$select=address,permit_type,application_date,value,category,description,applicant_name,latitude,longitude,location&$where=';
+var sqlSelect = '?$select=address,permit_type,status,application_date,value,category,description,applicant_name,latitude,longitude,location&$where=';
 var sqlConditions = '';
 var sqlTail = 'application_date%20>%20%272011-01-01T00:00:00%27&$order=application_date DESC';
 var sqlAND = '%20AND%20';
@@ -28,19 +28,20 @@ checkFilters = function() {
 };
 
 generateSQLConditions = function() {
-  sqlConditions = $('input[name=permitType]:checked').val() + sqlAND;
-  // if ($('input[name=permitType]:checked').length) {
-  //   sqlConditions = sqlConditions + $('input[name=permitType]:checked').val() +
-  //   sqlAND;
-  // }
-  // if ($('input[name=categoryType]:checked').length) {
-  //   sqlConditions = sqlConditions + $('input[name=categoryType]:checked').val() +
-  //   sqlAnd;
-  // }
-  // if ($('input[name=permitStatus]:checked').length) {
-  //   sqlConditions = sqlConditions + $('input[name=permitStatus]:checked').val() +
-  //   sqlAnd;
-  // };
+  sqlConditions = '';
+  // sqlConditions = sqlConditions + $('input[name=permitType]:checked').val() + sqlAND;
+  if ($('input[name=permitType]:checked').length) {
+    sqlConditions = sqlConditions + $('input[name=permitType]:checked').val() +
+    sqlAND;
+  }
+  if ($('input[name=categoryType]:checked').length) {
+    sqlConditions = sqlConditions + $('input[name=categoryType]:checked').val() +
+    sqlAND;
+  }
+  if ($('input[name=permitStatus]:checked').length) {
+    sqlConditions = sqlConditions + $('input[name=permitStatus]:checked').val() +
+    sqlAND;
+  }
   // for (i = 0;i < userRequests.length;i++) {
   //   if (i === userRequests.length - 1) {
   //     sqlConditions = sqlConditions + $('input:checked').val() + '%20AND%20';
@@ -73,13 +74,13 @@ requestController.controlRequest = function(ctx, next) {
 'category%20=%20%27INDUSTRIAL%27';
 'category%20=%20%27INSTITUTIONAL%27';
 'category%20=%20%27MULTIFAMILY%27';
-'category%20=%20%27SINGLE%20FAMILY%20%%2f20DUPLEX%27';
+'category%20=%20%27SINGLE%20FAMILY%20%2f%20DUPLEX%27';
 
 'status%20=%20%27Permit%20Issued%27';
 'status%20=%20%27Reviews%20Completed%27';
 'status%20=%20%27AP%20Closed%27';
 'status%20=%20%27Application%20Accepted%27';
 
-'?$select=address,permit_type,application_date,value,category,description,applicant_name,latitude,longitude,location&$where=permit_type%20=%20%27Construction%27%20AND%20application_date%20>%20%272011-01-01T00:00:00%27&$order=application_date DESC';
+'?$select=address,permit_type,status,application_date,value,category,description,applicant_name,latitude,longitude,location&$where=permit_type%20=%20%27Construction%27%20AND%20application_date%20>%20%272011-01-01T00:00:00%27&$order=application_date DESC';
 
 '?$select=address,permit_type,application_date,value,category,description,applicant_name,location&$where=permit_type%20=%20%27Construction%27%20AND%20application_date%20>%20%272011-01-01T00:00:00%27&$order=application_date DESC';
