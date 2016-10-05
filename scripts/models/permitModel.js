@@ -1,9 +1,7 @@
-// (function(module) {
+(function(module) {
 
   permits = {};
-
   permits.all = [];
-
   permits.getUserRequestedData = function(ctx, next) {
     $.get('https://data.seattle.gov/' +
           'resource/i5jq-ms7b.json' +
@@ -14,5 +12,6 @@
       console.log('successful');
     });
   };
-//   module.permits;
-// })(window);
+
+  module.permits;
+})(window);
