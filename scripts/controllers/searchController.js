@@ -1,8 +1,9 @@
-$('#submitButton').on('click', function() {
-  requestController.controlRequest(function() {
-    mapBuilder.populateMap();
-  });
-});
+// $('#submitButton').on('click', function() {
+//   // e.preventDefault();
+//   // requestController.controlRequest(function() {
+//   //   mapBuilder.populateMap();
+//   // });
+// });
 
   // var placeSearch, autocomplete;
   // var componentForm = {
