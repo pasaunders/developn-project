@@ -14,8 +14,8 @@
       <!-- handlebars templates here -->
       <script id="property-template" type="text/x-handlebars-template">
           <header>
-            Address: {{address}}<br>
-            Applicant Name: {{applicant_name}}<br>
+            <p id="row_one">Address: </p>{{address}}<br>
+            <p id="row_two">Applicant Name: </p>{{applicant_name}}<br>
             Description: {{description}}<br>
             Category: {{category}}<br>
             Action Type: {{action_type}}<br>
@@ -80,9 +80,6 @@
         <article id="mapWindow" class="">
           <div id="mapBox"></div>
           <!-- google maps window -->
-        </article>
-        <article id="infoBox" class="">
-          <!-- display results in smaller divs here when google maps marker is clicked on -->
         </article>
       </section>
       <section id="instructionsPage">
