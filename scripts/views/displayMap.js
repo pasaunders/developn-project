@@ -1,5 +1,5 @@
 (function(module) {
-
+  mapBuilder = {};
   var stylesArray = [
     {
       featureType: "all",
@@ -56,18 +56,21 @@ geocoder.geocode({'address': address},{
 });
   });
 
-  function populateMap() {
+  mapBuilder.populateMap = function() {
     permits.all.forEach(function(row, idx, array) {
       // var myLatLng = new google.maps.LatLng(Number(this.latitude,Number(this.longitude)));
       var marker = new google.maps.Marker({
         position: {lat: Number(row.latitude), lng: Number(row.longitude)},
         map: map,
       });
+      marker.addListener('click', function() {
+        //code to populate info box here.
+      });
     });
-  }
-  populateMap();  //there is probably a better way to populate the markers
+    mapBuilder.setCenter();
+  };
 
-  function setCenter() {
+  mapBuilder.setCenter = function() {
     var geocoder = new google.maps.Geocoder();
     var address = 'value'; //value needs to be set based on the address form field.
     geocoder.geocode({'address': address},
@@ -81,5 +84,5 @@ geocoder.geocode({'address': address},{
     });
   };
 
-  module.map = map;
+  module.mapBuilder = mapBuilder;
 })(window);
