@@ -110,6 +110,7 @@
           sql)
     .done(function(data) {
       permits.all = data;
+      console.log('successful');
     });
   };
 

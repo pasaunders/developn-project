@@ -64,4 +64,4 @@ requestController.controlRequest = function() {
   permits.getUserRequestedData(TEMPsqlString);
 };
 
-requestController.controlRequest();
+// requestController.controlRequest();
