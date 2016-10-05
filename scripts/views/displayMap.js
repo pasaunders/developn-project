@@ -30,7 +30,7 @@
   ];
 
   var mapOptions = {
-    zoom: 12,
+    zoom: 15,
     styles: stylesArray,
     center: new google.maps.LatLng(47.618217, -122.351832),
     mapTypeId: google.maps.MapTypeId.STREET,
@@ -78,22 +78,6 @@
         infoWindow.setContent(html);
         infoWindow.open(marker.get(map), marker);
       });
-    });
-    mapBuilder.setCenter();
-  };
-
-
-  mapBuilder.setCenter = function() {
-    var geocoder = new google.maps.Geocoder();
-    var address = 'value'; //value needs to be set based on the address form field.
-    geocoder.geocode({'address': address},
-    // {componentRestrictions: {country: 'US'}}, non-functional, we want to restrict to the seattle locality
-    function(results, status){
-      if (status === 'OK') {
-        map.setCenter(results[0].geometry.location);
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
     });
   };
 
