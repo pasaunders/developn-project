@@ -104,12 +104,13 @@
 
   permits.all = [];
 
-  permits.getUserRequestedData = function(sql) {
+  permits.getUserRequestedData = function(sql, callback) {
     $.get('https://data.seattle.gov/' +
           'resource/i5jq-ms7b.json' +
           sql)
     .done(function(data) {
       permits.all = data;
+      callback(data);
       console.log('successful');
     });
   };
