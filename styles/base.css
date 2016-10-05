@@ -8,6 +8,7 @@ body {
 
 nav li {
   height: 15px;
+  float: right;
 }
 
 a, a:link, a:active {
@@ -18,5 +19,4 @@ a, a:link, a:active {
 #logo {
   height: 50px;
   border-radius: 50%;
-
 }
