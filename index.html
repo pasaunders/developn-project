@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
     <title>devlopN</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/vendor/styles/reset.css">
     <link rel="stylesheet" href="/styles/base.css">
@@ -14,21 +14,24 @@
       <!-- handlebars templates here -->
       <script id="property-template" type="text/x-handlebars-template">
           <header>
-            <h1>{{address}}</h1>
-            <article class="clearfix" data-permit="{{application_permit_number}}">
-            <div class="byline">
-            <section class="description-body">{{description}}</section>
-            {{category}} {{action_type}} {{permit_type}} {{applicant_name}}
-            {{value}} {{application_date}} {{issue_date}} {{expiration_date}}
-            Permit and Complaints <address><a href="{{permit_and_complaint_status_url}}">{{complaint}}</a></address>
-            </div>
+            Address: {{address}}<br>
+            Applicant Name: {{applicant_name}}<br>
+            Description: {{description}}<br>
+            Category: {{category}}<br>
+            Action Type: {{action_type}}<br>
+            Permit Number: {{application_permit_number}}<br>
+            Permit Type: {{permit_type}}<br>
+            Value: ${{value}}<br>
+            Application Date: {{application_date}}<br>
+            Issue Date: {{issue_date}}<br>
+            Expiration Date: {{expiration_date}}<br>
+            Permit and Complaints URL: <address><a href="{{permit_and_complaint_status_url}}">{{complaint}}</a></address>
           </header>
-        </article>
       </script>
     </section>
   </head>
   <body>
-    <header>
+    <header id="mainHeader">
         <!-- navbar here -->
         <img src="/assets/logo.png" id="logo">
         <nav>
@@ -95,7 +98,7 @@
       </section>
     </main>
     <footer>
-      &copy; DevelopN 2016
+      &copy; developN 2016
     </footer>
   </body>
   <!-- scripts go here -->
