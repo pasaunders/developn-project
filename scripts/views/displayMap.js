@@ -46,7 +46,7 @@
   });
 
   google.maps.event.addDomListener(window, 'resize', function() {
-    var center = map.getCenter();
+    var center = mapBuilder.map.getCenter();
     google.maps.event.trigger(mapBuilder.map, 'resize');
     mapBuilder.map.setCenter(center);
   });
