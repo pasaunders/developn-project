@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto">
     <link rel="icon" type="image/x-icon" href="/assets/logo.png">
     <section>
-      <!-- handlebars templates here -->
       <script id="property-template" type="text/x-handlebars-template">
           <header>
             <div id="row">Address: {{address}}<br></div>
@@ -32,7 +31,6 @@
   </head>
   <body>
     <header id="mainHeader">
-        <!-- navbar here -->
         <a href="/"><img src="/assets/logo.png" id="logo"></a>
         <h1>developN Seattle</h1>
         <nav>
@@ -43,34 +41,30 @@
         </nav>
     </header>
     <main>
-
-
       <section id="filtersPage">
         <section id="howToUse">
           <h3>What's developN ?</h3>
           <p>
-            To view construction permits in Seattle, filter results using the form fields below and hit submit!
+            To view construction permits in Seattle, filter results using the form fields below and hit Submit!
           </p>
         </section>
-        <article class="">
+        <article>
           <h3>Permit Type</h3>
-          <form action="" id="permitTypeForm">
+          <form id="permitTypeForm">
             <input type="radio" name="permitType" value="permit_type%20=%20%27Construction%27"> Construction<br>
             <input type="radio" name="permitType" value="permit_type%20=%20%27Demolition%27"> Demolition<br>
             <input type="radio" name="permitType" value="permit_type%20=%20%27Site%20Development%27"> Site Development<br>
           </form><br>
-
           <h3>Category Type</h3>
-          <form class="" id="categoryTypeForm">
+          <form id="categoryTypeForm">
             <input type="radio" name="categoryType" value="category%20=%20%27COMMERCIAL%27"> Commercial<br>
             <input type="radio" name="categoryType" value="category%20=%20%27INDUSTRIAL%27"> Industrial<br>
             <input type="radio" name="categoryType" value="category%20=%20%27INSTITUTIONAL%27"> Institutional<br>
             <input type="radio" name="categoryType" value="category%20=%20%27MULTIFAMILY%27"> Multifamily<br>
             <input type="radio" name="categoryType" value="category%20=%20%27SINGLE%20FAMILY%20%2f%20DUPLEX%27"> Single Family/Duplex<br>
           </form><br>
-
           <h3>Permit Status</h3>
-          <form action="" id="permitStatusForm">
+          <form id="permitStatusForm">
             <input type="radio" name="permitStatus" value="status%20=%20%27Application%20Accepted%27"> Application Accepted<br>
             <input type="radio" name="permitStatus" value="status%20=%20%27Permit%20Issued%27"> Permit Issued<br>
             <input type="radio" name="permitStatus" value="status%20=%20%27Reviews%20Completed%27"> Reviews Completed<br>
@@ -105,7 +99,6 @@
             <option value="value%20<%20%27100000%27" data-value="100000">$100,000</option>
             <option value="value%20<%20%2750000%27" data-value="50000">$50,000</option>
           </select>
-
           <select id="valueLowerBound" class="select-value">
             <option value="">select lower bound for value</option>
             <option value="value%20>%20%27200000000%27" data-value="200000000">$200,000,000</option>
@@ -119,18 +112,15 @@
             <option value="value%20>%20%2750000%27" data-value="50000">$50,000</option>
           </select>
           <form style="display: inline"><a href="/map"><br><br>
-            <input type="button" value='Submit' id="submitButton"></a>
+            <input type="button" value="Submit" id="submitButton"></a>
           </form>
         </article>
       </section>
       <section id="resultsPage">
-        <!-- results "page" goes here -->
-        <article id="mapWindow" class="">
+        <article id="mapWindow">
           <div id="mapBox"></div>
-          <!-- google maps window -->
         </article>
-        <article id="infoBox" class="">
-          <!-- display results in smaller divs here when google maps marker is clicked on -->
+        <article id="infoBox">
         </article>
       </section>
       <section id="instructionsPage">
@@ -158,38 +148,32 @@
         <br>
         <h3><b>Retrieved Data</b></h3><br>
         <p>Address – The relevant property’s address<br><br>
-Applicant Name – The person who filed the application<br><br>
-Description – A brief description of the the proposed work. Long descriptions are truncated<br><br>
-Category – See category type above<br><br>
-Action Type – Is the application for a new building, changes to an existing building, or a demolition<br><br>
-Permit Number – The unique record number the city assigns <br><br>
-Permit Type – See permit type above <br><br>
-Value – Estimated worth of the finished construction based on fair market value. <br><br>
-Application Date – The date the application was filed <br><br>
-Issue Date – The date a permit was issued, if any <br><br>
-Expiration Date - The date an issued permit expires. Work should be completed <br><br>
-Permit and Complaints URL – A link to the City’s full record of the application</p>
+        Applicant Name – The person who filed the application<br><br>
+        Description – A brief description of the the proposed work. Long descriptions are truncated<br><br>
+        Category – See category type above<br><br>
+        Action Type – Is the application for a new building, changes to an existing building, or a demolition<br><br>
+        Permit Number – The unique record number the city assigns <br><br>
+        Permit Type – See permit type above <br><br>
+        Value – Estimated worth of the finished construction based on fair market value. <br><br>
+        Application Date – The date the application was filed <br><br>
+        Issue Date – The date a permit was issued, if any <br><br>
+        Expiration Date - The date an issued permit expires. Work should be completed <br><br>
+        Permit and Complaints URL – A link to the City’s full record of the application</p>
       </section>
     </main>
     <footer>
       <h2>&copy; developN 2016</h2>
     </footer>
   </body>
-  <!-- scripts go here -->
-  <!-- Libraries -->
   <script src="vendor/page.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
   <script src="vendor/handlebars-v4.0.5.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQGQs5-aAUxm7SPyVekerE3WxjRKcjBhs&libraries=places"></script>
   <script src="vendor/html5sql.js"></script>
   <script src="vendor/webdb.js"></script>
-  <!-- Models -->
   <script type="text/javascript" src="scripts/models/permitModel.js"></script>
-  <!-- Views -->
-  <script type="text/javascript" src="scripts/views/displayFilters.js"></script>
   <script type="text/javascript" src="scripts/controllers/requestController.js"></script>
   <script type="text/javascript" src="scripts/views/displayMap.js"></script>
-  <!-- Controllers -->
   <script type="text/javascript" src="scripts/controllers/filterController.js"></script>
   <script type="text/javascript" src="scripts/controllers/mapController.js"></script>
   <script type="text/javascript" src="scripts/controllers/aboutController.js"></script>
