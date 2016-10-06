@@ -14,17 +14,17 @@
       <!-- handlebars templates here -->
       <script id="property-template" type="text/x-handlebars-template">
           <header>
-            Address: {{address}}<br>
+            <div id="row">Address: {{address}}<br></div>
             Applicant Name: {{applicant_name}}<br>
-            Description: {{description}}<br>
+            <div id="row">Description: {{description}}<br></div>
             Category: {{category}}<br>
-            Action Type: {{action_type}}<br>
+            <div id="row">Action Type: {{action_type}}<br></div>
             Permit Number: {{application_permit_number}}<br>
-            Permit Type: {{permit_type}}<br>
+            <div id="row">Permit Type: {{permit_type}}<br></div>
             Value: ${{value}}<br>
-            Application Date: {{application_date}}<br>
+            <div id="row">Application Date: {{application_date}}<br></div>
             Issue Date: {{issue_date}}<br>
-            Expiration Date: {{expiration_date}}<br>
+            <div id="row">Expiration Date: {{expiration_date}}<br></div>
             Permit and Complaints URL: <address><a href="{{permit_and_complaint_status_url}}">{{complaint}}</a></address>
           </header>
       </script>
