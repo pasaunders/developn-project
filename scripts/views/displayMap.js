@@ -53,7 +53,7 @@
 
   var infoWindow = new google.maps.InfoWindow();
 
-  mapBuilder.populateMap = function(ctx, next) {
+  mapBuilder.populateMap = function(ctx, next) { 
     permits.all.forEach(function(row, idx, array) {
       var context = {address: row.address, application_permit_number: row.application_permit_number,
         description: row.description, category: row.category, action_type: row.action_type,
