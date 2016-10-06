@@ -6,21 +6,39 @@ body {
 
 }
 
-nav li {
-  height: 15px;
-  float: right;
-}
-
-a, a:link, a:active {
-  text-decoration: none;
-  color: #fff;
-}
-
 #logo {
   height: 50px;
   border-radius: 50%;
+  position: absolute;
 }
 
 #row {
   background-color: #EBEFF1;
+}
+
+ul {
+    list-style-type: none;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0288D1;
+}
+
+li {
+    float: right;
+    height: 50px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #03A9F4;
+    height: 50px;
 }
