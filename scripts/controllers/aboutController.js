@@ -6,5 +6,5 @@
     $('#resultsPage').hide();
     $('#filtersPage').hide();
   };
-  module.aboutController = mapController;
+  module.aboutController = aboutController;
 })(window);
