@@ -6,6 +6,10 @@
     $('#resultsPage').hide();
   };
 
+  // the functions below manage select box states
+  // that depend on the users input. conflicts in
+  // user entry are avoided completely.
+
   $('.select-year').on('change', function() {
     if ($(this).attr('id') == 'dateUpperBound') {
       var $upperYear = $(this).val().slice(26,30);
@@ -29,16 +33,16 @@
     if ($(this).attr('id') == 'valueUpperBound') {
       var $upperValue = parseInt($(this).val().slice(15,-3));
       $('#valueLowerBound option[data-value]').each(function() {
-        var testComp = parseInt($(this).val().slice(15,-3));
-        if (testComp >= $upperValue) {
+        var lowerTestValue = parseInt($(this).val().slice(15,-3));
+        if (lowerTestValue >= $upperValue) {
           $(this).prop('disabled', true);
         };
       });
     } else {
       var $lowerValue = parseInt($(this).val().slice(15,-3));
       $('#valueUpperBound option[data-value]').each(function() {
-        var testComp2 = parseInt($(this).val().slice(15,-3));
-        if ($(this).val().slice(15,-3) <= $lowerValue) {
+        var upperTestValue = parseInt($(this).val().slice(15,-3));
+        if (upperTestValue <= $lowerValue) {
           $(this).prop('disabled', true);
         };
       });

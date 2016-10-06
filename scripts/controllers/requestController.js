@@ -1,6 +1,20 @@
 (function(module) {
 
+  // requestController is an object that contains
+  // functions for generating a sql query based
+  // on user input. a sql query string is generated
+  // from values in the radio button forms and select
+  // option tags in index.html. these are sent to
+  // permitModel.js where an ajax call gets our
+  // data.
+
   requestController = {};
+
+  // these vars are pieces used to build a sql query.
+  // sqlSelect is a defined select phrase in sql.
+  // sqlTail is a default tail to go on the end of
+  // the sql query. sqlAND stores a value to be placed
+  // between sql conditions in the sql query.
 
   var sqlSelect = '?$select=*&$where=';
   var sqlTail = 'application_date%20>%20%272011-01-01T00:00:00%27&$order=application_date DESC';
@@ -21,18 +35,10 @@
       sqlAND;
     }
     if(($('#dateUpperBound')).val()!=='') {
-      console.log('sqlTail: ' + sqlTail);
-      console.log('sqlConditions: ' + sqlConditions);
       sqlConditions = sqlConditions + $('#dateUpperBound').val() + sqlAND;
-      console.log('sqlTail: ' + sqlTail);
-      console.log('sqlConditions: ' + sqlConditions);
     }
     if(($('#dateLowerBound').val())!=='') {
-      console.log('sqlTail: ' + sqlTail);
-      console.log('sqlConditions: ' + sqlConditions);
       sqlTail = $('#dateLowerBound').val();
-      console.log('sqlTail: ' + sqlTail);
-      console.log('sqlConditions: ' + sqlConditions);
     }
     if(($('#valueUpperBound')).val()!=='') {
       sqlConditions = sqlConditions + $('#valueUpperBound').val() + sqlAND;
@@ -40,7 +46,6 @@
     if(($('#valueLowerBound')).val()!=='') {
       sqlConditions = sqlConditions + $('#valueLowerBound').val() + sqlAND;
     }
-    console.log('sqlConditions: ' + sqlConditions);
     return sqlConditions;
   };
 
@@ -48,8 +53,6 @@
     var sqlString = sqlSelect +
     sqlConditions() +
     sqlTail;
-    console.log('sqlTail: ' + sqlTail);
-    console.log('sqlString: ' + sqlString);
     return sqlString;
   };
 

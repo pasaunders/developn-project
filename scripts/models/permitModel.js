@@ -8,10 +8,11 @@
           ctx.sql)
     .done(function(data) {
       permits.all = data;
+      if (permits.all.length == 0){
+        alert('Your search returns zero results. Please try another.');
+      };
       next();
-      console.log('successful');
     });
   };
-
   module.permits;
 })(window);
