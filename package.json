@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/pasaunders/developn-project/issues"
   },
-  "homepage": "https://github.com/pasaunders/developn-project#readme"
+  "homepage": "https://github.com/pasaunders/developn-project#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-request-proxy": "^2.0.0"
+  }
 }
