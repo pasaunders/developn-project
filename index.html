@@ -25,7 +25,7 @@
             <div id="row">Application Date: {{application_date}}<br></div>
             Issue Date: {{issue_date}}<br>
             <div id="row">Expiration Date: {{expiration_date}}<br></div>
-            Permit and Complaints URL: <address><a href="{{permit_and_complaint_status_url}}">{{complaint}}</a></address>
+            Permit and Complaints URL: <address><a href="{{permit_and_complaint_status_url}}" target="_blank">{{complaint}}</a></address>
           </header>
       </script>
     </section>
@@ -33,7 +33,7 @@
   <body>
     <header id="mainHeader">
         <!-- navbar here -->
-        <img src="/assets/logo.png" id="logo">
+        <a href="/"><img src="/assets/logo.png" id="logo"></a>
         <h1>developN Seattle</h1>
         <nav>
           <ul>
@@ -44,6 +44,13 @@
         </nav>
     </header>
     <main>
+
+      <section id="howToUse">
+        <h3>What's developN ?</h3>
+        <p>
+          To view construction permits in Seattle, filter results using the form fields below and hit submit!
+        </p>
+      </section>
 
       <section id="filtersPage">
         <!-- Apply filters on this "page" -->
@@ -73,7 +80,7 @@
             <input type="radio" name="permitStatus" value="status%20=%20%27Permit%20Issued%27"> Permit Issued<br>
             <input type="radio" name="permitStatus" value="status%20=%20%27Reviews%20Completed%27"> Reviews Completed<br>
             <input type="radio" name="permitStatus" value="status%20=%20%27AP%20Closed%27"> Application Closed<br>
-          </form>
+          </form><br>
           <select id="dateUpperBound" class="select-year">
             <option value="">select upper bound for date</option>
             <option value="application_date%20<%20%272016-01-01T00:00:00%27" data-year="2016">2016</option>
@@ -103,6 +110,7 @@
             <option value="value%20<%20%27100000%27" data-value="100000">$100,000</option>
             <option value="value%20<%20%2750000%27" data-value="50000">$50,000</option>
           </select>
+
           <select id="valueLowerBound" class="select-value">
             <option value="">select lower bound for value</option>
             <option value="value%20>%20%27200000000%27" data-value="200000000">$200,000,000</option>
@@ -115,8 +123,8 @@
             <option value="value%20>%20%27100000%27" data-value="100000">$100,000</option>
             <option value="value%20>%20%2750000%27" data-value="50000">$50,000</option>
           </select>
-          <form style="display: inline"><a href="/map">
-            <input type=button value='submit' id="submitButton"></a>
+          <form style="display: inline"><a href="/map"><br><br>
+            <input type="button" value='Submit' id="submitButton"></a>
           </form>
         </article>
       </section>

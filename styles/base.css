@@ -1,5 +1,4 @@
 body {
-  /*color: #fff;*/
   background-color: #EBEFF1;
   font-family: 'Noto Sans', sans-serif;
 }
@@ -29,6 +28,9 @@ h3 {
   font-family: 'Roboto', sans-serif;
   background-color: #BDBDBD;
   padding: 2px 2px;
+}
+#howToUse h3 {
+  text-align: center;
 }
 
 #logo {
