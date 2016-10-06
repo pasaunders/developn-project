@@ -70,24 +70,24 @@
             <input type="radio" name="permitStatus" value="status%20=%20%27Reviews%20Completed%27"> Reviews Completed<br>
             <input type="radio" name="permitStatus" value="status%20=%20%27AP%20Closed%27"> Application Closed<br>
           </form>
-          <select id="dateUpperBound">
+          <select id="dateUpperBound" class="select-year">
             <option value="">select upper bound for date</option>
-            <option value="application_date%20<%20%272016-01-01T00:00:00%27">2016</option>
-            <option value="application_date%20<%20%272015-01-01T00:00:00%27">2015</option>
-            <option value="application_date%20<%20%272014-01-01T00:00:00%27">2014</option>
-            <option value="application_date%20<%20%272013-01-01T00:00:00%27">2013</option>
-            <option value="application_date%20<%20%272012-01-01T00:00:00%27">2012</option>
+            <option value="application_date%20<%20%272016-01-01T00:00:00%27" data-year="2016">2016</option>
+            <option value="application_date%20<%20%272015-01-01T00:00:00%27" data-year="2015">2015</option>
+            <option value="application_date%20<%20%272014-01-01T00:00:00%27" data-year="2014">2014</option>
+            <option value="application_date%20<%20%272013-01-01T00:00:00%27" data-year="2013">2013</option>
+            <option value="application_date%20<%20%272012-01-01T00:00:00%27" data-year="2012">2012</option>
           </select>
-          <select id="dateLowerBound">
+          <select id="dateLowerBound" class="select-year">
             <option value="">select lower bound for date</option>
-            <option value="application_date%20>%20%272016-01-01T00:00:00%27">2016</option>
-            <option value="application_date%20>%20%272015-01-01T00:00:00%27">2015</option>
-            <option value="application_date%20>%20%272014-01-01T00:00:00%27">2014</option>
-            <option value="application_date%20>%20%272013-01-01T00:00:00%27">2013</option>
-            <option value="application_date%20>%20%272012-01-01T00:00:00%27">2012</option>
-            <option value="application_date%20>%20%272011-01-01T00:00:00%27">2011</option>
+            <option value="application_date%20>%20%272016-01-01T00:00:00%27" data-year="2016">2016</option>
+            <option value="application_date%20>%20%272015-01-01T00:00:00%27" data-year="2015">2015</option>
+            <option value="application_date%20>%20%272014-01-01T00:00:00%27" data-year="2014">2014</option>
+            <option value="application_date%20>%20%272013-01-01T00:00:00%27" data-year="2013">2013</option>
+            <option value="application_date%20>%20%272012-01-01T00:00:00%27" data-year="2012">2012</option>
+            <option value="application_date%20>%20%272011-01-01T00:00:00%27" data-year="2011">2011</option>
           </select>
-          <select id="valueUpperBound">
+          <select id="valueUpperBound" class="select-value">
             <option value="">select upper bound for value</option>
             <option value="value%20<%20%27200000000%27">$200,000,000</option>
             <option value="value%20<%20%27100000000%27">$100,000,000</option>
@@ -99,7 +99,7 @@
             <option value="value%20<%20%27100000%27">$100,000</option>
             <option value="value%20<%20%2750000%27">$50,000</option>
           </select>
-          <select id="valueLowerBound">
+          <select id="valueLowerBound" class="select-value">
             <option value="">select lower bound for value</option>
             <option value="value%20>%20%27200000000%27">$200,000,000</option>
             <option value="value%20>%20%27100000000%27">$100,000,000</option>
