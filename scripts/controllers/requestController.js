@@ -2,8 +2,7 @@
 
   requestController = {};
 
-  var numberOfFilters = 3;
-  var sqlSelect = '?$select=address,permit_type,status,application_date,value,category,description,applicant_name,latitude,longitude,location&$where=';
+  var sqlSelect = '?$select=*&$where=';
   var sqlTail = 'application_date%20>%20%272011-01-01T00:00:00%27&$order=application_date DESC';
   var sqlAND = '%20AND%20';
 
@@ -21,13 +20,36 @@
       sqlConditions = sqlConditions + $('input[name=permitStatus]:checked').val() +
       sqlAND;
     }
+    if(($('#dateUpperBound')).val()!=='') {
+      console.log('sqlTail: ' + sqlTail);
+      console.log('sqlConditions: ' + sqlConditions);
+      sqlConditions = sqlConditions + $('#dateUpperBound').val() + sqlAND;
+      console.log('sqlTail: ' + sqlTail);
+      console.log('sqlConditions: ' + sqlConditions);
+    }
+    if(($('#dateLowerBound').val())!=='') {
+      console.log('sqlTail: ' + sqlTail);
+      console.log('sqlConditions: ' + sqlConditions);
+      sqlTail = $('#dateLowerBound').val();
+      console.log('sqlTail: ' + sqlTail);
+      console.log('sqlConditions: ' + sqlConditions);
+    }
+    if(($('#valueUpperBound')).val()!=='') {
+      sqlConditions = sqlConditions + $('#valueUpperBound').val() + sqlAND;
+    }
+    if(($('#valueLowerBound')).val()!=='') {
+      sqlConditions = sqlConditions + $('#valueLowerBound').val() + sqlAND;
+    }
+    console.log('sqlConditions: ' + sqlConditions);
     return sqlConditions;
   };
-  
+
   sqlQuery = function() {
     var sqlString = sqlSelect +
     sqlConditions() +
     sqlTail;
+    console.log('sqlTail: ' + sqlTail);
+    console.log('sqlString: ' + sqlString);
     return sqlString;
   };
 
