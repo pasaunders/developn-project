@@ -22,15 +22,23 @@ footer {
   background-color: #fff;
   color: black;
   margin: 10%;
-  padding: 5% 0;
+  padding: 2% 2%;
+  box-shadow: 0 8px 10px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 #permitTypeForm {
   background-color: #B3E5FC;
+  padding: 3px 3px;
+}
+
+#categoryTypeForm {
+  background-color: #EBEFF1;
+  padding: 3px 3px;
 }
 
 #permitStatusForm {
   background-color: #B3E5FC;
+  padding: 3px 3px;
 }
 
 #mapBox {
