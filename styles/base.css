@@ -20,3 +20,7 @@ a, a:link, a:active {
   height: 50px;
   border-radius: 50%;
 }
+
+#row {
+  background-color: #EBEFF1;
+}

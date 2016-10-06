@@ -1,6 +1,6 @@
 (function(module) {
   mapBuilder = {};
-
+  var markerList = [];
   var source = $("#property-template").html();
   var template = Handlebars.compile(source);
 
@@ -30,7 +30,7 @@
   ];
 
   var mapOptions = {
-    zoom: 18,
+    zoom: 16,
     styles: stylesArray,
     center: new google.maps.LatLng(47.618217, -122.351832),
     mapTypeId: google.maps.MapTypeId.STREET,
@@ -53,7 +53,11 @@
 
   var infoWindow = new google.maps.InfoWindow();
 
-  mapBuilder.populateMap = function(ctx, next) { 
+  mapBuilder.populateMap = function(ctx, next) {
+    markerList.forEach(function(marker,idx,array){
+      markerList[idx].setMap(null);
+    });
+    markerList = [];
     permits.all.forEach(function(row, idx, array) {
       var context = {address: row.address, application_permit_number: row.application_permit_number,
         description: row.description, category: row.category, action_type: row.action_type,
@@ -70,6 +74,7 @@
         infoWindow.setContent(html);
         infoWindow.open(marker.get(map), marker);
       });
+      markerList.push(marker);
     });
     next();
   };
