@@ -7,15 +7,8 @@
     $('#instructionsPage').hide();
   };
 
-  // the functions below manage select box states
-  // that depend on the users input. conflicts in
-  // user entry are avoided completely.
-
-  // this function listens for changes in the date
-  // select boxes using the select-year class
-
   $('.select-year').on('change', function() {
-    if ($(this).attr('id') == 'dateUpperBound') {
+    if ($(this).attr('id') === 'dateUpperBound') {
       var $upperYear = $(this).val().slice(26,30);
       $('#dateLowerBound option[data-year]').each(function() {
         if (Math.round($(this).text()) >= $upperYear) {
@@ -32,11 +25,8 @@
     };
   });
 
-  // this function listens for changes in the value
-  // select boxes using the select-value class
-
   $('.select-value').on('change', function() {
-    if ($(this).attr('id') == 'valueUpperBound') {
+    if ($(this).attr('id') === 'valueUpperBound') {
       var $upperValue = parseInt($(this).val().slice(15,-3));
       $('#valueLowerBound option[data-value]').each(function() {
         var lowerTestValue = parseInt($(this).val().slice(15,-3));
