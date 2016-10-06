@@ -30,7 +30,7 @@
   ];
 
   var mapOptions = {
-    zoom: 16,
+    zoom: 15,
     styles: stylesArray,
     center: new google.maps.LatLng(47.618217, -122.351832),
     mapTypeId: google.maps.MapTypeId.STREET,
@@ -40,15 +40,15 @@
     }
   };
 
-  var map = new google.maps.Map(document.getElementById('mapBox'), mapOptions);
-  google.maps.event.addListener(map, 'idle', function() {
+  mapBuilder.map = new google.maps.Map(document.getElementById('mapBox'), mapOptions);
+  google.maps.event.addListener(mapBuilder.map, 'idle', function() {
     $('#mapBox>div').attr('style', 'height: 100%; width: 100%; position: static; background-color: rgb(229, 227, 223);');
   });
 
   google.maps.event.addDomListener(window, 'resize', function() {
     var center = map.getCenter();
-    google.maps.event.trigger(map, 'resize');
-    map.setCenter(center);
+    google.maps.event.trigger(mapBuilder.map, 'resize');
+    mapBuilder.map.setCenter(center);
   });
 
   var infoWindow = new google.maps.InfoWindow();
@@ -68,11 +68,11 @@
       var html = template(context);
       var marker = new google.maps.Marker({
         position: {lat: Number(row.latitude), lng: Number(row.longitude)},
-        map: map,
+        map: mapBuilder.map,
       });
       marker.addListener('click', function() {
         infoWindow.setContent(html);
-        infoWindow.open(marker.get(map), marker);
+        infoWindow.open(marker.get(mapBuilder.map), marker);
       });
       markerList.push(marker);
     });
