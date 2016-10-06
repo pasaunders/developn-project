@@ -37,27 +37,22 @@
         <h1>developN Seattle</h1>
         <nav>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Other</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
           </ul>
         </nav>
     </header>
     <main>
 
-      <section id="howToUse">
-        <h3>What's developN ?</h3>
-        <p>
-          To view construction permits in Seattle, filter results using the form fields below and hit submit!
-        </p>
-      </section>
 
       <section id="filtersPage">
-        <!-- Apply filters on this "page" -->
-
-
+        <section id="howToUse">
+          <h3>What's developN ?</h3>
+          <p>
+            To view construction permits in Seattle, filter results using the form fields below and hit submit!
+          </p>
+        </section>
         <article class="">
-          <!-- filter choices (use checkboxes?) -->
           <h3>Permit Type</h3>
           <form action="" id="permitTypeForm">
             <input type="radio" name="permitType" value="permit_type%20=%20%27Construction%27"> Construction<br>
@@ -139,8 +134,41 @@
         </article>
       </section>
       <section id="instructionsPage">
-        <!-- Instructions page here for filler. Do whatever -->
-        <!-- triva, how many applications filed in the last 7 days -->
+        <h1 style="color: Black">Instructions</h1><br><br><br>
+        <h3><b>Filter Descriptions</b></h3><br>
+        <p><u>Permit Types</u></p><br>
+        <p>Construction - A new structure</p><br>
+        <p>Demolition - Destroying an existing structure</p><br>
+        <p>Site Development - Property improvement without a new structure</p><br>
+        <br>
+        <p><u>Category Type</u></p><br>
+        <p>The general use category the permit falls into.</p><br>
+        <p>Commercial - Business or mixed use housing/commercial construction</p><br>
+        <p>Industrial – Heavy industry related construction</p><br>
+        <p>Institutional – Related to institutions such as schools or hospitals</p><br>
+        <p>Multifamily – Buildings which house multiple living units</p><br>
+        <p>Single Family/Duplex – Buildings with only one or two living units</p><br>
+        <br>
+        <p><u>Permit Status</u></p><br>
+        <p>How far along is the permitting process?</p><br>
+        <p>Application Accepted – The city has the application, but has not completed its review</p><br>
+        <p>Permit Issued – The city has issued a permit</p><br>
+        <p>Reviews Completed – The city has completed its review but has not issued a permit</p><br>
+        <p>Application Closed – The application has been withdrawn, rejected, or is otherwise out of consideration for permitting.</p><br>
+        <br>
+        <h3><b>Retrieved Data</b></h3><br>
+        <p>Address – The relevant property’s address<br><br>
+Applicant Name – The person who filed the application<br><br>
+Description – A brief description of the the proposed work. Long descriptions are truncated<br><br>
+Category – See category type above<br><br>
+Action Type – Is the application for a new building, changes to an existing building, or a demolition<br><br>
+Permit Number – The unique record number the city assigns <br><br>
+Permit Type – See permit type above <br><br>
+Value – Estimated worth of the finished construction based on fair market value. <br><br>
+Application Date – The date the application was filed <br><br>
+Issue Date – The date a permit was issued, if any <br><br>
+Expiration Date - The date an issued permit expires. Work should be completed <br><br>
+Permit and Complaints URL – A link to the City’s full record of the application</p>
       </section>
     </main>
     <footer>
@@ -164,5 +192,6 @@
   <!-- Controllers -->
   <script type="text/javascript" src="scripts/controllers/filterController.js"></script>
   <script type="text/javascript" src="scripts/controllers/mapController.js"></script>
+  <script type="text/javascript" src="scripts/controllers/aboutController.js"></script>
   <script type="text/javascript" src="scripts/controllers/routes.js"></script>
 </html>
