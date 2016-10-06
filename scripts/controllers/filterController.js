@@ -4,6 +4,7 @@
   filterController.reveal = function() {
     $('#filtersPage').show();
     $('#resultsPage').hide();
+    $('#instructionsPage').hide();
   };
 
   $('.select-year').on('change', function() {
