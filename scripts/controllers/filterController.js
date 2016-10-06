@@ -11,14 +11,14 @@
       var $upperYear = $(this).val().slice(26,30);
       $('#dateLowerBound option[data-year]').each(function() {
         console.log($(this).val());
-        if (Math.round($(this).text()) > $upperYear) {
+        if (Math.round($(this).text()) >= $upperYear) {
           $(this).prop('disabled', true);
         };
       });
     } else {
       var $lowerYear = $(this).val().slice(26,30);
       $('#dateUpperBound option[data-year]').each(function() {
-        if (Math.round($(this).text()) < $lowerYear) {
+        if (Math.round($(this).text()) <= $lowerYear) {
           $(this).prop('disabled', true);
         };
       });
@@ -30,7 +30,7 @@
       var $upperValue = parseInt($(this).val().slice(15,-3));
       $('#valueLowerBound option[data-value]').each(function() {
         var testComp = parseInt($(this).val().slice(15,-3));
-        if (testComp > $upperValue) {
+        if (testComp >= $upperValue) {
           $(this).prop('disabled', true);
         };
       });
@@ -38,7 +38,7 @@
       var $lowerValue = parseInt($(this).val().slice(15,-3));
       $('#valueUpperBound option[data-value]').each(function() {
         var testComp2 = parseInt($(this).val().slice(15,-3));
-        if ($(this).val().slice(15,-3) < $lowerValue) {
+        if ($(this).val().slice(15,-3) <= $lowerValue) {
           $(this).prop('disabled', true);
         };
       });
