@@ -8,6 +8,12 @@
   };
 
   $('.select-year').on('change', function() {
+    $('#dateUpperBound option[data-year]').each(function() {
+      $(this).prop('disabled', false);
+    });
+    $('#dateLowerBound option[data-year]').each(function() {
+      $(this).prop('disabled', false);
+    });
     if ($(this).attr('id') === 'dateUpperBound') {
       var $upperYear = $(this).val().slice(26,30);
       $('#dateLowerBound option[data-year]').each(function() {
@@ -26,6 +32,12 @@
   });
 
   $('.select-value').on('change', function() {
+    $('#valueUpperBound option[data-value]').each(function() {
+      $(this).prop('disabled', false);
+    });
+    $('#valueLowerBound option[data-value]').each(function() {
+      $(this).prop('disabled', false);
+    });
     if ($(this).attr('id') === 'valueUpperBound') {
       var $upperValue = parseInt($(this).val().slice(15,-3));
       $('#valueLowerBound option[data-value]').each(function() {
